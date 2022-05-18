@@ -1,0 +1,60 @@
+# Get all games
+GET http://localhost:3000/games
+###
+
+#Get one game by id
+GET http://localhost:3000/games/6285324d2c951e6f22d07720
+###
+GET http://localhost:3000/games/6285341f2c951e6f22d07721
+###
+GET http://localhost:3000/games/6285351e383801dc68e65f48
+###
+GET http://localhost:3000/games/6285362e383801dc68e65f49
+###
+GET http://localhost:3000/games/628536c5383801dc68e65f4a
+###
+#Create game
+POST http://localhost:3000/games HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Thurn and Taxis",
+    "year": "2006",
+    "players": "4",
+    "age": "10+",
+    "designer": "Hans Im Gluck",
+    "cityDesigned": "Munchen",
+    "playtime": "60 minutes"
+}
+###
+
+#Heroku links
+#Get all games
+GET https://cse341-2.herokuapp.com/games
+###
+
+#Get one game by id
+GET https://cse341-2.herokuapp.com/games/6285324d2c951e6f22d07720
+###
+GET https://cse341-2.herokuapp.com/games/6285341f2c951e6f22d07721
+###
+GET https://cse341-2.herokuapp.com/games/6285351e383801dc68e65f48
+###
+GET https://cse341-2.herokuapp.com/games/6285362e383801dc68e65f49
+###
+GET https://cse341-2.herokuapp.com/games/628536c5383801dc68e65f4a
+###
+
+#Create a game
+POST https://cse341-2.herokuapp.com/games HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Thurn and Taxis",
+    "year": "2006",
+    "players": "4",
+    "age": "10+",
+    "designer": "Hans Im Gluck",
+    "cityDesigned": "Munchen",
+    "playtime": "60 minutes"
+}
