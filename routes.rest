@@ -20,12 +20,29 @@ content-type: application/json
 {
     "name": "Thurn and Taxis",
     "year": "2006",
+    "players": "2",
+    "age": "8+",
+    "designer": "Hans Im Gluck",
+    "cityDesigned": "Munchen",
+    "playtime": "50 minutes"
+}
+###
+#Update a Game
+PUT http://localhost:3000/games/628e590a03fbe63707daaf92 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Thurn and Taxis",
+    "year": "2006",
     "players": "4",
     "age": "10+",
     "designer": "Hans Im Gluck",
     "cityDesigned": "Munchen",
     "playtime": "60 minutes"
 }
+###
+#Delete Game
+DELETE http://localhost:3000/games/628e590a03fbe63707daaf92 HTTP/1.1
 ###
 
 #Heroku links
@@ -51,6 +68,20 @@ content-type: application/json
 
 {
     "name": "Thurn and Taxis",
+    "year": "2002",
+    "players": "2",
+    "age": "8+",
+    "designer": "Hans Im Gluck",
+    "cityDesigned": "Munchen",
+    "playtime": "50 minutes"
+}
+###
+#Update a Game
+PUT https://cse341-2.herokuapp.com/games/628e5ca0d105232f824dff80 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Thurn and Taxis",
     "year": "2006",
     "players": "4",
     "age": "10+",
@@ -58,3 +89,6 @@ content-type: application/json
     "cityDesigned": "Munchen",
     "playtime": "60 minutes"
 }
+###
+#Delete Game
+DELETE https://cse341-2.herokuapp.com/games/628e5ac8d105232f824dff7f HTTP/1.1
