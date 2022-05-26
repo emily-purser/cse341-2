@@ -1,7 +1,9 @@
-const { check } = require('express-validator');
+const Validator = require('validatorjs');
 
-exports.gamesValidation = [
-    check('name', 'Game name is required').not().isEmpty(),
-    check('year', 'Game year is required').not().isEmpty(),
-    check('players', 'Games players is required').not().isEmpty
-]
+const validator = (body, rules, customMessages, callback) => {
+    const validation = new Validator(body, rules, customMessages);
+    validation.passes(() => callback(null, true));
+    validation.fails(() => callback(validation.errors, false));
+};
+
+module.exports = validator;
