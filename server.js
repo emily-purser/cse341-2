@@ -43,4 +43,3 @@ mongodb.initDb((err, mongodb) => {
     }
 });
 
-
