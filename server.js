@@ -44,9 +44,3 @@ mongodb.initDb((err, mongodb) => {
 });
 
 
-
-
-// // auth router attaches /login, /logout, and /callback routes to the baseURL
-// app.use(auth(config));
-
-
