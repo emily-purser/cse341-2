@@ -6,6 +6,7 @@ const doc = {
         description: 'Games API'
     },
     host: 'cse341-2.herokuapp.com',
+    basePath: '/home',
     schemes: ['https'],
 };
 
