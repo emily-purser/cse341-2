@@ -20,7 +20,7 @@ async function allGames(req, res, next) {
 async function oneGame(req, res) {
     try {
         const userplayers = new ObjectId(req.params.players);
-        const result = await mongodb.getDb().db('cse341-2').collection('games').find({ "players": req.params.players});
+        const result = await mongodb.getDb().db('cse341-2').collection('games').find({ "players": "4"});
         result.toArray().then((lists) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(lists[0]);
