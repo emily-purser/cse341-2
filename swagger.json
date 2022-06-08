@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "cse341-2.herokuapp.com",
-  "basePath": "/",
+  "basePath": "/home",
   "schemes": [
     "https"
   ],
