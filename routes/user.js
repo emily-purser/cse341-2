@@ -3,10 +3,10 @@ const userController = require('../controllers/user.js');
 const validation = require('../middleware/validate.js');
 
 routes.get('/', userController.allUsers);
-routes.get('/:username', userController.oneUser);
+routes.get('/:id', userController.oneUser);
 routes.post('/', userController.createUser);
-routes.put('/:username', userController.updateUser);
-routes.delete('/:username', userController.deleteUser);
+routes.put('/:id', userController.updateUser);
+routes.delete('/:id', userController.deleteUser);
 
 
 module.exports = routes;

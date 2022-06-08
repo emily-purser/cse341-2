@@ -20,8 +20,8 @@ async function allUsers(req, res, next) {
 //Get one user by username
 async function oneUser(req, res) {
     try {
-        const username = new ObjectId(req.params.username);
-        const result = await mongodb.getDb().db('cse341-2').collection('user').find({ username: username});
+        const userId = new ObjectId(req.params.id);
+        const result = await mongodb.getDb().db('cse341-2').collection('user').find({ _id: userId});
         result.toArray().then((lists) => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(lists[0]);
@@ -73,11 +73,12 @@ async function updateUser(req, res){
             res.status(400).send({message: checkPassword.error});
             return;
         }
+        const userId = new ObjectId(req.params.id);
         const newUser = {
             username: req.body.username,
             password: password
         };
-        const result = await mongodb.getDb().db('cse341-2').collection('user').replaceOne({username: username}, newUser);
+        const result = await mongodb.getDb().db('cse341-2').collection('user').replaceOne({_id: userId}, newUser);
         res.status(200).json(result);
 
     } catch (err) {
@@ -85,14 +86,15 @@ async function updateUser(req, res){
     }
 }
 
-//Delete a user by username
+//Delete a user by id
 async function deleteUser(req, res) {
-    const username = new ObjectId(req.params.username);
+    const userId = new ObjectId(req.params.id);
+    const username = req.params.username;
     if(!username) {
         res.status(400).send({message: 'Invalid Username Supplied'});
     }
     try {
-        const result = await mongodb.getDb().db('cse341-2').collection('user').remove({username: username}, true);
+        const result = await mongodb.getDb().db('cse341-2').collection('user').remove({_id: userId}, true);
         res.status(200).json(result);
     }catch(err){
         res.status(500).json(err)
