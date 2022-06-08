@@ -23,7 +23,7 @@ async function oneUser(req, res) {
         const result = await mongodb.getDb().db('cse341-2').collection('user').find({ "username": req.params.username});
         result.toArray().then((lists) => {
             res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(lists[0]);
+            res.status(200).json(lists);
         })
     } catch (err) {
         res.status(500).json(err);
